@@ -38,4 +38,9 @@ app.use('/sala-aula', sala_aula)
 const turma = require('./routes/turma')
 app.use('/turma', turma)
 
+const funcionario = require('./routes/funcionario')
+app.use('/funcionario', funcionario)
+
+const aluno = require('./routes/aluno')
+app.use('/aluno', aluno)
 module.exports = app

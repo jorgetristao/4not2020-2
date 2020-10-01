@@ -8,8 +8,8 @@ const esquema = mongoose.Schema({
    telefone: { type: String, required: true },
    email: { type: String, required: true },
    mensalidade: { type: Number, required: true },
-   data_pagamento: { type: Date, required: true },
-   personal: { type: mongoose.ObjectId, ref: 'Funcionario', required: true }
+   data_pagamento: { type: Number, required: true },
+   funcionario: { type: mongoose.ObjectId, ref: 'Funcionario', required: true }
 })
 
 /*

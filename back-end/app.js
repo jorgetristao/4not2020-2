@@ -43,4 +43,14 @@ app.use('/funcionario', funcionario)
 
 const aluno = require('./routes/aluno')
 app.use('/aluno', aluno)
+
+const avaliacao = require('./routes/avaliacao')
+app.use('/avaliacao', avaliacao)
+
+const treino = require('./routes/treino')
+app.use('/treino', treino)
+
+const pagamento = require('./routes/pagamento')
+app.use('/pagamento', pagamento)
+
 module.exports = app

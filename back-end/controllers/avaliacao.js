@@ -27,16 +27,16 @@
 
 //Controller é um conjunto de funções associadas às operações sobre dados
 
-const Aluno = require('../models/Aluno')
+const Avaliacao = require('../models/Avaliacao')
 
-const controller = {} 
+const controller = {}
 
 //Operação CREATE, função novo()
 controller.novo = async (req, res) => {
     //Usa os dados que chegam dentro do body da requisição
     //e os envia ao banco de dados para a criação de um novo objeto
     try {
-        await Aluno.create(req.body)
+        await Avaliacao.create(req.body)
         //HTTP 201: Created
         res.status(201).end()
     }
@@ -50,8 +50,9 @@ controller.novo = async (req, res) => {
 //Operação RETRIEVE (all), função listar()
 controller.listar = async (req, res) => {
     try {
-        let dados = await Aluno.find() //find() sem parametros tras tudo.
+        let dados = await Avaliacao.find() //find() sem parametros tras tudo.
         .populate('funcionario', 'nome')
+        .populate('aluno', 'nome')
         res.send(dados) //Vai com status HTTP 200: OK
     }
     catch(erro) {
@@ -65,7 +66,7 @@ controller.obterUm = async (req, res) => {
     try {
         //capturando o parametro id da URL
         const id = req.params.id
-        let obj = await Aluno.findById(id)
+        let obj = await Avaliacao.findById(id)
 
         //O objeto existe e foi encontrado
         if(obj) res.send(obj) //HTTP 200
@@ -85,7 +86,7 @@ controller.atualizar = async (req, res) => {
         const id = req.body._id
 
         //Busca e substituição do conteúdo do objeto
-        let ret = await Aluno.findByIdAndUpdate(id, req.body)
+        let ret = await Avaliacao.findByIdAndUpdate(id, req.body)
 
         //Se encontrou e atualizou, retornamos HTTP 204: No content
         if(ret) res.status(204).end()
@@ -105,7 +106,7 @@ controller.excluir = async (req,res) => {
         const id = req.body._id
 
         //Busca pelo id e exclusão
-        let ret = await Aluno.findByIdAndDelete(id)
+        let ret = await Avaliacao.findByIdAndDelete(id)
 
         //Encontrou e excluiu, HTTP 204: No content
         if(ret) res.status(204).end()

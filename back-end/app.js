@@ -26,18 +26,6 @@ app.use('/users', usersRouter);
 const teste = require('./routes/teste')
 app.use('/teste', teste)
 
-const curso = require('./routes/curso')
-app.use('/curso', curso)
-
-const professor = require('./routes/professor')
-app.use('/professor', professor)
-
-const sala_aula = require('./routes/sala_aula')
-app.use('/sala-aula', sala_aula)
-
-const turma = require('./routes/turma')
-app.use('/turma', turma)
-
 const funcionario = require('./routes/funcionario')
 app.use('/funcionario', funcionario)
 

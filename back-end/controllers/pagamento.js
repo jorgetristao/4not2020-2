@@ -51,7 +51,7 @@ controller.novo = async (req, res) => {
 controller.listar = async (req, res) => {
     try {
         let dados = await Pagamento.find() //find() sem parametros tras tudo.
-        .populate('aluno', 'nome')
+        .populate('aluno')
         res.send(dados) //Vai com status HTTP 200: OK
     }
     catch(erro) {

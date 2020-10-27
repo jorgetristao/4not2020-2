@@ -9,13 +9,17 @@ import { MainToolbarComponent } from './ui/main-toolbar/main-toolbar.component';
 import { MainFooterComponent } from './ui/main-footer/main-footer.component';
 import { MainMenuComponent } from './ui/main-menu/main-menu.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AulaListComponent } from './aula/aula-list/aula-list.component';
+import { AlunoListComponent } from './aluno/aluno-list/aluno-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainToolbarComponent,
     MainFooterComponent,
-    MainMenuComponent
+    MainMenuComponent,
+    AulaListComponent,
+    AlunoListComponent
   ],
   imports: [
     BrowserModule,

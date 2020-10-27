@@ -12,6 +12,6 @@ export class AlunoService {
   constructor(private http: HttpClient) { }
 
   listar() {
-      return this.http.get(this.apiServer + 'aluno')
+      return this.http.get(this.apiServer + 'aluno').toPromise()
   }
 }
